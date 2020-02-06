@@ -110,17 +110,38 @@ jobs:
           CONFIG_TARGET_brcm2708_bcm2709_DEVICE_rpi-2=y
           EOF
 
+          # 编译 Raspberry Pi 3/3B 固件:
+          # cat >> .config <<EOF
+          # CONFIG_TARGET_brcm2708=y
+          # CONFIG_TARGET_brcm2708_bcm2710=y
+          # CONFIG_TARGET_brcm2708_bcm2710_DEVICE_rpi-3=y
+          # EOF
+
+          # 编译 Raspberry Pi 4/4B 固件:
+          # cat >> .config <<EOF
+          # CONFIG_TARGET_brcm2708=y
+          # CONFIG_TARGET_brcm2708_bcm2711=y
+          # CONFIG_TARGET_brcm2708_bcm2711_DEVICE_rpi-4=y
+          # EOF
+
+          # 编译小米路由器 R3G 固件:
+          # cat >> .config <<EOF
+          # CONFIG_TARGET_brcm2708=y
+          # CONFIG_TARGET_brcm2708_bcm2711=y
+          # CONFIG_TARGET_brcm2708_bcm2711_DEVICE_rpi-4=y
+          # EOF
+
           # 固件压缩:
           cat >> .config <<EOF
           CONFIG_TARGET_IMAGES_GZIP=y
           EOF
 
-          # 编译UEFI固件:
+          # 编译 UEFI 固件（仅针对 x64 固件有效）:
           # cat >> .config <<EOF
           # CONFIG_EFI_IMAGES=y
           # EOF
 
-          # IPv6支持:
+          # IPv6 支持:
           # cat >> .config <<EOF
           # CONFIG_PACKAGE_dnsmasq_full_dhcpv6=y
           # CONFIG_PACKAGE_ipv6helper=y
@@ -144,7 +165,7 @@ jobs:
           CONFIG_PACKAGE_kmod-fs-vfat=y
           EOF
 
-          # USB3.0支持:
+          # USB3.0 支持:
           cat >> .config <<EOF
           CONFIG_PACKAGE_kmod-usb-ohci=y
           CONFIG_PACKAGE_kmod-usb-ohci-pci=y
@@ -159,7 +180,7 @@ jobs:
           CONFIG_PACKAGE_kmod-scsi-core=y
           EOF
 
-          # 常用LuCI插件选择:
+          # 常用 LuCI 插件选择:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-app-adbyby-plus=y
           CONFIG_PACKAGE_luci-app-frpc=y
@@ -203,7 +224,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-unblockmusic is not set
           EOF
 
-          # LuCI主题:
+          # LuCI 主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
           CONFIG_PACKAGE_luci-theme-netgear=y
@@ -218,22 +239,22 @@ jobs:
           CONFIG_PACKAGE_tree=y
           CONFIG_PACKAGE_vim-fuller=y
           CONFIG_PACKAGE_wget=y
-          CONFIG_PACKAGE_nginx=y
-          CONFIG_PACKAGE_php7=y
-          CONFIG_PHP7_LIBFREETYPE=y
-          CONFIG_PACKAGE_php7-fpm=y
-          CONFIG_PACKAGE_php7-mod-curl=y
-          CONFIG_PACKAGE_php7-mod-gd=y
-          CONFIG_PACKAGE_php7-mod-iconv=y
-          CONFIG_PACKAGE_php7-mod-json=y
-          CONFIG_PACKAGE_php7-mod-opcache=y
-          CONFIG_PACKAGE_php7-mod-session=y
-          CONFIG_PACKAGE_php7-mod-zip=y
-          CONFIG_PACKAGE_php7-mod-mbstring=y
-          CONFIG_PACKAGE_zoneinfo-asia=y
+          # CONFIG_PACKAGE_nginx=y
+          # CONFIG_PACKAGE_php7=y
+          # CONFIG_PHP7_LIBFREETYPE=y
+          # CONFIG_PACKAGE_php7-fpm=y
+          # CONFIG_PACKAGE_php7-mod-curl=y
+          # CONFIG_PACKAGE_php7-mod-gd=y
+          # CONFIG_PACKAGE_php7-mod-iconv=y
+          # CONFIG_PACKAGE_php7-mod-json=y
+          # CONFIG_PACKAGE_php7-mod-opcache=y
+          # CONFIG_PACKAGE_php7-mod-session=y
+          # CONFIG_PACKAGE_php7-mod-zip=y
+          # CONFIG_PACKAGE_php7-mod-mbstring=y
+          # CONFIG_PACKAGE_zoneinfo-asia=y
           EOF
 
-          # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
+          # 取消编译 VMware 镜像以及镜像填充 (不要删除被缩进的注释符号):
           # cat >> .config <<EOF
           # # CONFIG_TARGET_IMAGES_PAD is not set
           # # CONFIG_VMDK_IMAGES is not set
